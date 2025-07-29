@@ -77,7 +77,10 @@ The project utilizes multiple parallel corpus sources:
 
 ### Data Statistics
 - **Format**: TSV files with `source` (Tamil) and `target` (Sinhala) columns
-- **Split**: 80% training, 20% validation
+- **Split Strategies**: Multiple experiments conducted:
+  - 80% training, 20% validation
+  - 90% training, 10% validation  
+  - 80% training, 10% validation, 10% test
 - **Preprocessing**: Character filtering, alignment verification, shuffling
 
 ## 🚀 Getting Started
@@ -90,7 +93,7 @@ cd "2. Data Pre-Processing"
 # Run the final preprocessing pipeline
 jupyter notebook final-pre-proces.ipynb
 
-# Split data into train/validation sets
+# Split data into train/validation sets (multiple strategies tested)
 jupyter notebook "80% Train 20% Validation.ipynb"
 ```
 
@@ -197,17 +200,23 @@ print(f"Translation: {translation}")
 
 ## 📊 Experimental Results
 
-The project includes three major experiments for each model:
+The project includes three major experiments for each model with different dataset splitting strategies:
 
+### Dataset Split Experiments
+- **Strategy 1**: 80% training, 20% validation
+- **Strategy 2**: 90% training, 10% validation
+- **Strategy 3**: 80% training, 10% validation, 10% test
+
+### Model Experiments
 - **EXP 01**: Baseline training with standard hyperparameters
 - **EXP 02**: Hyperparameter optimization and regularization
 - **EXP 03**: Advanced training techniques and model improvements
 
 Each experiment folder contains:
-- Training notebooks
-- BLEU score plots
+- Training notebooks with different data splits
+- BLEU score plots and comparisons
 - Model checkpoints
-- Evaluation results
+- Evaluation results across different split strategies
 
 ## 🔍 Research Papers
 
